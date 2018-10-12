@@ -9,10 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
+   
     @IBOutlet weak var result: UITextField!
     
     var re = 0
+    var add = 0
+    var number = 0
+    var judge = 0
+    var result_1 = ""
     
+
+    @IBAction func output(_ sender: Any) {
+        let a = Double(result_1)!
+        let b = Double(result.text!)!
+        if number == 1{
+            let c = a + b
+            result.text = String(c)
+        }
+    }
     @IBAction func number1(_ sender: Any) {
         
         if re == 1{
@@ -40,6 +54,14 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func dot(_ sender: Any) {
+        judge = 0
+        if judge == 0{
+            result.text = result.text! + "."
+            judge = 1
+        }
+    }
+    
     @IBAction func number4(_ sender: Any) {
     }
     
@@ -63,8 +85,33 @@ class ViewController: UIViewController {
 
     @IBAction func clear(_ sender: Any) {
         result.text = ""
+        add = 0
     }
     
+    @IBAction func plus(_ sender: Any) {
+        if add == 1{
+            let a = Double(result_1)!
+            let b = Double(result.text!)!
+            let c = a+b
+            result_1 = String(c)
+            result.text = ""
+            number = 1
+            re = 1
+        }else{
+            add = 1
+            if result.text == ""{
+                result.text = "0"
+            }else{
+                add = 1
+                let x =
+                 Double(result.text!)!
+                result_1 = String(x)
+                result.text = ""
+                number = 1
+                re = 0
+                 }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
