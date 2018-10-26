@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     var judge = 0
     var result_1 = ""
     
-
     @IBAction func output(_ sender: Any) {
         let a = Double(result_1)!
         let b = Double(result.text!)!
@@ -54,33 +53,75 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func dot(_ sender: Any) {
-        judge = 0
-        if judge == 0{
-            result.text = result.text! + "."
-            judge = 1
+   
+    
+    @IBAction func number4(_ sender: Any) {
+        if re == 1{
+            result.text="4"
+        }else{
+            result.text = result.text! + "4"
         }
     }
     
-    @IBAction func number4(_ sender: Any) {
-    }
-    
     @IBAction func number5(_ sender: Any) {
+        if re == 1{
+        result.text="5"
+    }else{
+        result.text = result.text! + "5"
+        }
     }
     
     @IBAction func number6(_ sender: Any) {
+        if re == 1{
+            result.text="6"
+        }else{
+            result.text = result.text! + "6"
+        }
     }
     
     @IBAction func number7(_ sender: Any) {
+        if re == 1{
+            result.text="7"
+        }else{
+            result.text = result.text! + "7"
+        }
     }
     
+    @IBAction func MC(_ sender: Any) {
+    }
     @IBAction func number8(_ sender: Any) {
+        if re == 1{
+            result.text="8"
+        }else{
+            result.text = result.text! + "8"
+        }
     }
     
     @IBAction func number9(_ sender: Any) {
+        if re == 1{
+            result.text="9"
+        }else{
+            result.text = result.text! + "9"
+        }
     }
     
     @IBAction func number0(_ sender: Any) {
+        if re == 1{
+            result.text="0"
+        }else{
+            result.text = result.text! + "0"
+        }
+    }
+    
+    @IBAction func dot(_ sender: Any) {
+
+        if judge == 1{
+            result.text = result.text!
+            }
+        else{
+            result.text = result.text! + "."
+            judge = 1
+        }
     }
 
     @IBAction func clear(_ sender: Any) {
