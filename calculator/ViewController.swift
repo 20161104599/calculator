@@ -22,9 +22,26 @@ class ViewController: UIViewController {
         let a = Double(result_1)!
         let b = Double(result.text!)!
         if number == 1{
-            let c = a + b
+            let c = ((a*100000000) + (b*100000000)) / 100000000
             result.text = String(c)
         }
+        
+        if number == 2{
+            let c = ((a*100000000) - (b*100000000)) / 100000000
+            result.text = String(c)
+        }
+        
+        if number == 3{
+            let c = ((a*100000000) * (b*100000000)) / 10000000000000000
+            result.text = String(c)
+        }
+        
+        if number == 4{
+            let c = ((a*100000000) / (b*100000000))
+            result.text = String(c)
+        }
+        
+        judge = 0
     }
     @IBAction func number1(_ sender: Any) {
         
@@ -87,8 +104,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func MC(_ sender: Any) {
-    }
+    
     @IBAction func number8(_ sender: Any) {
         if re == 1{
             result.text="8"
@@ -152,6 +168,117 @@ class ViewController: UIViewController {
                 re = 0
                  }
         }
+        judge = 0
+    }
+    @IBAction func Subtraction(_ sender: Any) {
+        if add == 1{
+            let a = Double(result_1)!
+            let b = Double(result.text!)!
+            let c = a-b
+            result_1 = String(c)
+            result.text = ""
+            number = 2
+            re = 1
+        }else{
+            add = 1
+            if result.text == ""{
+                result.text = "0"
+            }else{
+                add = 1
+                let x =
+                    Double(result.text!)!
+                result_1 = String(x)
+                result.text = ""
+                number = 2
+                re = 0
+            }
+        }
+        judge = 0
+    }
+    
+    @IBAction func Multiply(_ sender: Any) {
+        if add == 1{
+            let a = Double(result_1)!
+            let b = Double(result.text!)!
+            let c = a * b
+            result_1 = String(c)
+            result.text = ""
+            number = 3
+            re = 1
+        }else{
+            add = 1
+            if result.text == ""{
+                result.text = "0"
+            }else{
+                add = 1
+                let x =
+                    Double(result.text!)!
+                result_1 = String(x)
+                result.text = ""
+                number = 3
+                re = 0
+            }
+        }
+        judge = 0
+        
+    }
+    @IBAction func Divide(_ sender: Any) {
+        if add == 1{
+            let a = Double(result_1)!
+            let b = Double(result.text!)!
+            let c = a / b
+            result_1 = String(c)
+            result.text = ""
+            number = 4
+            re = 1
+        }else{
+            add = 1
+            if result.text == ""{
+                result.text = "0"
+            }else{
+                add = 1
+                let x =
+                    Double(result.text!)!
+                result_1 = String(x)
+                result.text = ""
+                number = 4
+                re = 0
+            }
+        }
+        judge = 0
+    }
+    
+    @IBAction func Cancel(_ sender: Any) {
+        
+    }
+    @IBAction func Change(_ sender: Any) {
+        let count = Double(result.text!)!
+        let count2 = -count
+        result.text = String(count2)
+        re = 0
+    }
+    @IBAction func Percent(_ sender: Any) {
+        let count = Double(result.text!)!
+        let count2 = count * 0.01
+        result.text = String(count2)
+        re = 0
+        
+    }
+    @IBAction func MC(_ sender: Any) {
+        
+    }
+    
+    @IBAction func MR(_ sender: Any) {
+        
+    }
+    @IBAction func Ma(_ sender: Any) {
+    
+    }
+    @IBAction func Square(_ sender: Any) {
+        let count = Double(result.text!)!
+        let count2 = count * count
+        result.text = String(count2)
+        re = 0
     }
     override func viewDidLoad() {
         super.viewDidLoad()
