@@ -21,26 +21,36 @@ class ViewController: UIViewController {
     @IBAction func output(_ sender: Any) {
         let a = Double(result_1)!
         let b = Double(result.text!)!
+        var c = 0.0
         if number == 1{
-            let c = ((a*100000000) + (b*100000000)) / 100000000
+             c = ((a*100000000) + (b*100000000)) / 100000000
             result.text = String(c)
         }
         
         if number == 2{
-            let c = ((a*100000000) - (b*100000000)) / 100000000
+             c = ((a*100000000) - (b*100000000)) / 100000000
             result.text = String(c)
         }
         
         if number == 3{
-            let c = ((a*100000000) * (b*100000000)) / 10000000000000000
+             c = ((a*100000000) * (b*100000000)) / 10000000000000000
             result.text = String(c)
         }
         
         if number == 4{
-            let c = ((a*100000000) / (b*100000000))
+             c = ((a*100000000) / (b*100000000))
             result.text = String(c)
         }
-        
+        result.text = String(c)
+        var del:String = result.text!
+        while del.last == "0"{
+            del.removeLast()
+            print(del)
+        }
+        while del.last == "."{
+            del.removeLast()
+            print(del)
+        }
         judge = 0
     }
     @IBAction func number1(_ sender: Any) {
