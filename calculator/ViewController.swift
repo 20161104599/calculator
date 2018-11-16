@@ -57,6 +57,7 @@ class ViewController: UIViewController {
         
         if re == 1{
             result.text="1"
+            
         }else{
             result.text = result.text! + "1"
         }
@@ -165,7 +166,7 @@ class ViewController: UIViewController {
             number = 1
             re = 1
         }else{
-            add = 1
+            
             if result.text == ""{
                 result.text = "0"
             }else{
