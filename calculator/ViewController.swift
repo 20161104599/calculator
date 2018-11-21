@@ -52,11 +52,15 @@ class ViewController: UIViewController {
             print(del)
         }
         judge = 0
+        re = 1
+        add = 0
     }
     @IBAction func number1(_ sender: Any) {
         
         if re == 1{
             result.text="1"
+            re = 0
+            
             
         }else{
             result.text = result.text! + "1"
@@ -67,6 +71,8 @@ class ViewController: UIViewController {
         
         if re == 1{
             result.text="2"
+            re = 0
+            
         }else{
             result.text = result.text! + "2"
         }
@@ -76,6 +82,8 @@ class ViewController: UIViewController {
         
         if re == 1{
             result.text="3"
+            re = 0
+            
         }else{
             result.text = result.text! + "3"
         }
@@ -86,6 +94,8 @@ class ViewController: UIViewController {
     @IBAction func number4(_ sender: Any) {
         if re == 1{
             result.text="4"
+            re = 0
+            
         }else{
             result.text = result.text! + "4"
         }
@@ -94,6 +104,7 @@ class ViewController: UIViewController {
     @IBAction func number5(_ sender: Any) {
         if re == 1{
         result.text="5"
+            re = 0
     }else{
         result.text = result.text! + "5"
         }
@@ -102,6 +113,8 @@ class ViewController: UIViewController {
     @IBAction func number6(_ sender: Any) {
         if re == 1{
             result.text="6"
+            re = 0
+            
         }else{
             result.text = result.text! + "6"
         }
@@ -110,6 +123,8 @@ class ViewController: UIViewController {
     @IBAction func number7(_ sender: Any) {
         if re == 1{
             result.text="7"
+            re = 0
+            
         }else{
             result.text = result.text! + "7"
         }
@@ -119,6 +134,8 @@ class ViewController: UIViewController {
     @IBAction func number8(_ sender: Any) {
         if re == 1{
             result.text="8"
+            re = 0
+            
         }else{
             result.text = result.text! + "8"
         }
@@ -127,6 +144,8 @@ class ViewController: UIViewController {
     @IBAction func number9(_ sender: Any) {
         if re == 1{
             result.text="9"
+            re = 0
+            
         }else{
             result.text = result.text! + "9"
         }
@@ -135,6 +154,8 @@ class ViewController: UIViewController {
     @IBAction func number0(_ sender: Any) {
         if re == 1{
             result.text="0"
+            re = 0
+            
         }else{
             result.text = result.text! + "0"
         }
@@ -259,9 +280,12 @@ class ViewController: UIViewController {
         judge = 0
     }
     
-    @IBAction func Cancel(_ sender: Any) {
-        
+    
+    @IBAction func Treturn(_ sender: Any) {
+        result.text?.removeLast()
     }
+    
+    
     @IBAction func Change(_ sender: Any) {
         let count = Double(result.text!)!
         let count2 = -count
