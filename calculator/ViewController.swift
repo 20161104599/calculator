@@ -16,12 +16,16 @@ class ViewController: UIViewController {
     var add = 0
     var number = 0
     var judge = 0
+    var Subtraction = 0
     var result_1 = ""
     
     @IBAction func output(_ sender: Any) {
         let a = Double(result_1)!
         let b = Double(result.text!)!
         var c = 0.0
+        if result.text == ""{
+            result.text = ""
+        }
         if number == 1{
              c = ((a*100000000) + (b*100000000)) / 100000000
             result.text = String(c)
@@ -41,16 +45,19 @@ class ViewController: UIViewController {
              c = ((a*100000000) / (b*100000000))
             result.text = String(c)
         }
-        result.text = String(c)
-        var del:String = result.text!
-        while del.last == "0"{
-            del.removeLast()
-            print(del)
+        
+        result.text = String(format:"%.10lf",c)
+        
+        while(result.text?.last == "0")
+        {
+            result.text?.removeLast()
         }
-        while del.last == "."{
-            del.removeLast()
-            print(del)
+        if(result.text?.last == ".")
+        {
+            result.text?.removeLast()
         }
+        
+        
         judge = 0
         re = 1
         add = 0
@@ -189,7 +196,7 @@ class ViewController: UIViewController {
         }else{
             
             if result.text == ""{
-                result.text = "0"
+                result.text = ""
             }else{
                 add = 1
                 let x =
@@ -200,6 +207,7 @@ class ViewController: UIViewController {
                 re = 0
                  }
         }
+        
         judge = 0
     }
     @IBAction func Subtraction(_ sender: Any) {
@@ -214,7 +222,7 @@ class ViewController: UIViewController {
         }else{
             add = 1
             if result.text == ""{
-                result.text = "0"
+                result.text = ""
             }else{
                 add = 1
                 let x =
@@ -224,7 +232,11 @@ class ViewController: UIViewController {
                 number = 2
                 re = 0
             }
+            if result.text == ""{
+                result.text = ""
+            }
         }
+
         judge = 0
     }
     
@@ -240,7 +252,7 @@ class ViewController: UIViewController {
         }else{
             add = 1
             if result.text == ""{
-                result.text = "0"
+                result.text = ""
             }else{
                 add = 1
                 let x =
@@ -250,6 +262,9 @@ class ViewController: UIViewController {
                 number = 3
                 re = 0
             }
+        }
+        if result.text == ""{
+            result.text = ""
         }
         judge = 0
         
@@ -266,7 +281,7 @@ class ViewController: UIViewController {
         }else{
             add = 1
             if result.text == ""{
-                result.text = "0"
+                result.text = ""
             }else{
                 add = 1
                 let x =
@@ -276,6 +291,9 @@ class ViewController: UIViewController {
                 number = 4
                 re = 0
             }
+        }
+        if result.text == ""{
+            result.text = ""
         }
         judge = 0
     }
